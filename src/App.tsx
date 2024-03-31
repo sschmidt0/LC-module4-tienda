@@ -1,3 +1,5 @@
+import { Router } from "./core/router";
+
 export const App = () => {
-  return <h1>Listado imágenes</h1>;
+  return <Router />;
 };
