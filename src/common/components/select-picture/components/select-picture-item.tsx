@@ -10,10 +10,12 @@ const LITERALS = {
 };
 
 export interface SelectPictureItemProps {
-  picture: PictureInfo;
+  item: PictureInfo;
 }
 
-export const SelectPictureItem = ({ picture }: SelectPictureItemProps) => {
+export const SelectPictureItem = ({
+  item: picture,
+}: SelectPictureItemProps) => {
   const [selectedCat, setSelectedCat] = React.useState<PictureInfo>();
 
   const handleOnSelect = (picture: PictureInfo) => {
