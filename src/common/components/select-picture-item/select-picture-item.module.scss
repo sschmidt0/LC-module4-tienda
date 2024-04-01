@@ -1,0 +1,26 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  width: 150px;
+  padding: 4px;
+
+  &__image {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 8px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__input {
+    display: flex;
+    align-items: stretch;
+    gap: 4px;
+  }
+}
