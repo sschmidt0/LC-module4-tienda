@@ -1,3 +1,9 @@
-export const CartContainer = () => {
-  return <h3>container</h3>;
+import { CartComponent } from "./cart.component";
+
+export interface CartContainerProps {
+  className?: string;
+}
+
+export const CartContainer = ({ className }: CartContainerProps) => {
+  return <CartComponent className={className} />;
 };
