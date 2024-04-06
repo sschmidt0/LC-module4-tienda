@@ -2,6 +2,9 @@ import * as React from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
+import FormGroup from "@mui/material/FormGroup";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Checkbox from "@mui/material/Checkbox";
 import { PictureInfo } from "common/types";
 import styles from "./select-picture-item.module.scss";
 
@@ -29,14 +32,17 @@ export const SelectPictureItem = ({
           <img src={picture.picUrl} alt={picture.title} />
         </div>
         <Typography variant="h6">{picture.title}</Typography>
-        <div className={styles.card__input}>
-          <input
-            type="checkbox"
-            value={selectedCat?.id}
-            onChange={() => handleOnSelect(picture)}
-          />
-          <span>{LITERALS.buy}</span>
-        </div>
+        <FormGroup>
+          <FormControlLabel
+            control={
+              <Checkbox
+                value={selectedCat?.id}
+                onChange={() => handleOnSelect(picture)}
+              />
+            }
+            label={LITERALS.buy}
+          ></FormControlLabel>
+        </FormGroup>
       </CardContent>
     </Card>
   );
