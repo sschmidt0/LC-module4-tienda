@@ -1,7 +1,9 @@
 .link {
-  color: #fff;
-  text-decoration: none;
   text-transform: uppercase;
   font-weight: 700;
   cursor: pointer;
+
+  &__text {
+    color: #fff;
+  }
 }

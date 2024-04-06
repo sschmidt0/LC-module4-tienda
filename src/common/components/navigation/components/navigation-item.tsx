@@ -15,8 +15,8 @@ export const NavigationItem = ({ link }: NavigationItemProps) => {
   };
 
   return (
-    <Link className={styles.link} onClick={handleClick}>
-      {link.label}
+    <Link underline="none" className={styles.link} onClick={handleClick}>
+      <span className={styles.link__text}>{link.label}</span>
     </Link>
   );
 };
