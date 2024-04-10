@@ -1,10 +1,8 @@
 import { SelectPictures } from "common/components";
-import { PictureInfo } from "common/types";
+import { useDoggies } from "./doggies.hook";
 
-export interface DoggiesComponentProps {
-  doggies: PictureInfo[];
-}
+export const DoggiesComponent = () => {
+  const doggies = useDoggies();
 
-export const DoggiesComponent = ({ doggies }: DoggiesComponentProps) => {
   return <SelectPictures items={doggies} />;
 };
