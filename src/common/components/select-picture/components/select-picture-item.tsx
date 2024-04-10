@@ -36,6 +36,7 @@ export const SelectPictureItem = ({
           <FormControlLabel
             control={
               <Checkbox
+                color="secondary"
                 value={selectedCat?.id}
                 onChange={() => handleOnSelect(picture)}
               />
