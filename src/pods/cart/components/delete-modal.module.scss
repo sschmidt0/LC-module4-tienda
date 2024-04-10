@@ -1,0 +1,33 @@
+.overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(157, 39, 176, 0.7);
+  z-index: 1200; // due to header z-index 1100 from MUI
+}
+
+.modal {
+  width: 90vw;
+  max-width: 400px;
+  padding: 24px;
+  background-color: #fff;
+  height: fit-content;
+  border-radius: 2px;
+
+  &__buttongroup {
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+    width: 100%;
+    margin-top: 24px;
+  }
+}
+
+.hide {
+  display: none;
+}
