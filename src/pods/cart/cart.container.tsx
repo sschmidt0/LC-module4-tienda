@@ -5,5 +5,9 @@ export interface CartContainerProps {
 }
 
 export const CartContainer = ({ className }: CartContainerProps) => {
-  return <CartComponent className={className} />;
+  const handleDelete = (id: string) => {
+    console.log(`deleting ${id}`);
+  };
+
+  return <CartComponent className={className} onDelete={handleDelete} />;
 };
