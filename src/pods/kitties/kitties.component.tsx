@@ -1,10 +1,11 @@
+import * as React from "react";
+import { SelectedItemContext } from "core/provider";
+import { useKitties } from "./kitties.hook";
 import { SelectPictures } from "common/components";
-import { PictureInfo } from "common/types";
 
-export interface KittiesComponentProps {
-  kitties: PictureInfo[];
-}
+export const KittiesComponent = () => {
+  const { selectedItems } = React.useContext(SelectedItemContext);
+  const kitties = useKitties();
 
-export const KittiesComponent = ({ kitties }: KittiesComponentProps) => {
-  return <SelectPictures items={kitties} />;
+  return <SelectPictures items={kitties} selectedItems={selectedItems} />;
 };

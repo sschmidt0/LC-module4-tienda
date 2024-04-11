@@ -1,10 +1,11 @@
+import * as React from "react";
+import { SelectedItemContext } from "core/provider";
+import { useDoggies } from "./doggies.hook";
 import { SelectPictures } from "common/components";
-import { PictureInfo } from "common/types";
 
-export interface DoggiesComponentProps {
-  doggies: PictureInfo[];
-}
+export const DoggiesComponent = () => {
+  const { selectedItems } = React.useContext(SelectedItemContext);
+  const doggies = useDoggies();
 
-export const DoggiesComponent = ({ doggies }: DoggiesComponentProps) => {
-  return <SelectPictures items={doggies} />;
+  return <SelectPictures items={doggies} selectedItems={selectedItems} />;
 };

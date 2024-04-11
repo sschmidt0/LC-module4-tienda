@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+
+  &__sidebar {
+    width: 100%;
+
+    @media screen and (min-width: 460px) {
+      width: 320px;
+    }
+  }
+
+  &__main {
+    flex: 1;
+  }
+}
