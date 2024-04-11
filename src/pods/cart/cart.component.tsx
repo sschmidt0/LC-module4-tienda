@@ -1,15 +1,17 @@
+import * as React from "react";
 import cx from "classnames";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import styles from "./cart.module.scss";
+import { SelectedItemContext } from "core/provider";
 import { CartItem } from "./components";
-import { doggies } from "pods/doggies/doggies.mock";
+import styles from "./cart.module.scss";
 
 export interface CartComponentProps {
   className?: string;
-  onDelete: (id: string) => void;
 }
 
-export const CartComponent = ({ className, onDelete }: CartComponentProps) => {
+export const CartComponent = ({ className }: CartComponentProps) => {
+  const { selectedItems, onClick } = React.useContext(SelectedItemContext);
+
   return (
     <div className={cx(styles.container, className)}>
       <div className={styles.container__inner}>
@@ -18,8 +20,12 @@ export const CartComponent = ({ className, onDelete }: CartComponentProps) => {
           <span>Cart</span>
         </div>
         <div className={styles.container__content}>
-          {doggies.map((item) => (
-            <CartItem key={item.id} item={item} onDelete={onDelete} />
+          {selectedItems.map((item) => (
+            <CartItem
+              key={item.id}
+              item={item}
+              onDelete={() => onClick("delete", item)}
+            />
           ))}
         </div>
       </div>
