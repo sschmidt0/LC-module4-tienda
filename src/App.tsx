@@ -1,18 +1,20 @@
-import { Navigation } from "common/components";
-import { Router } from "./core/router";
 import { BrowserRouter } from "react-router-dom";
+import { SelectedItemsProvider, ToggleCartProvider } from "core/provider";
+import { Router } from "./core/router";
 import { AppLayout } from "layouts";
-import { SelectedItemsProvider } from "core/provider";
+import { Navigation } from "common/components";
 
 export const App = () => {
   return (
-    <SelectedItemsProvider>
-      <AppLayout>
-        <BrowserRouter>
-          <Navigation />
-          <Router />
-        </BrowserRouter>
-      </AppLayout>
-    </SelectedItemsProvider>
+    <ToggleCartProvider>
+      <SelectedItemsProvider>
+        <AppLayout>
+          <BrowserRouter>
+            <Navigation />
+            <Router />
+          </BrowserRouter>
+        </AppLayout>
+      </SelectedItemsProvider>
+    </ToggleCartProvider>
   );
 };
