@@ -32,7 +32,9 @@ export const CartItem = ({ item, onDelete }: CartItemProps) => {
         <div className={styles.item__image}>
           <img src={item.picUrl} alt={item.title} />
         </div>
-        <Typography variant="body1">{item.title}</Typography>
+        <Typography className={styles.item__text} variant="body1">
+          {item.title}
+        </Typography>
         <DeleteIcon
           color="secondary"
           onClick={handleIconClick}

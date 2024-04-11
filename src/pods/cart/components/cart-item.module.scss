@@ -16,6 +16,10 @@
     }
   }
 
+  &__text {
+    min-width: 100px;
+  }
+
   &__icon {
     margin-left: 16px;
     cursor: pointer;
