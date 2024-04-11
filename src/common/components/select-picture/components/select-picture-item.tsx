@@ -7,6 +7,7 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import { PictureInfo } from "common/types";
 import styles from "./select-picture-item.module.scss";
+import { SelectedItemContext } from "core/provider";
 
 const LITERALS = {
   buy: "Buy",
@@ -14,31 +15,35 @@ const LITERALS = {
 
 export interface SelectPictureItemProps {
   item: PictureInfo;
+  hasCheckedInput: boolean;
 }
 
 export const SelectPictureItem = ({
-  item: picture,
+  item,
+  hasCheckedInput,
 }: SelectPictureItemProps) => {
-  const [selectedCat, setSelectedCat] = React.useState<PictureInfo>();
+  const { onClick } = React.useContext(SelectedItemContext);
+  const action = hasCheckedInput ? "delete" : "add";
 
-  const handleOnSelect = (picture: PictureInfo) => {
-    setSelectedCat(picture);
+  const handleCheckboxClick = () => {
+    onClick(action, item);
   };
 
   return (
     <Card className={styles.card}>
       <CardContent>
         <div className={styles.card__image}>
-          <img src={picture.picUrl} alt={picture.title} />
+          <img src={item.picUrl} alt={item.title} />
         </div>
-        <Typography variant="h6">{picture.title}</Typography>
+        <Typography variant="h6">{item.title}</Typography>
         <FormGroup>
           <FormControlLabel
             control={
               <Checkbox
                 color="secondary"
-                value={selectedCat?.id}
-                onChange={() => handleOnSelect(picture)}
+                value={hasCheckedInput}
+                onChange={handleCheckboxClick}
+                checked={hasCheckedInput}
               />
             }
             label={LITERALS.buy}
