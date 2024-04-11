@@ -1,4 +1,21 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
 .links {
+  flex: 1;
   display: flex;
   gap: 24px;
+}
+
+.toggle {
+  display: flex;
+  width: 40px;
+  cursor: pointer;
+
+  svg {
+    width: 16px;
+    height: auto;
+  }
 }
