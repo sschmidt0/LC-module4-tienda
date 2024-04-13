@@ -6,11 +6,13 @@ type Action = "delete" | "add";
 export interface SelectedItemProviderProps {
   selectedItems: PictureInfo[];
   onClick: (action: Action, item: PictureInfo) => void;
+  onClearAll: () => void;
 }
 
 export const SelectedItemContext =
   React.createContext<SelectedItemProviderProps>({
     onClick: () => {},
+    onClearAll: () => {},
     selectedItems: [],
   });
 
@@ -45,6 +47,10 @@ export const SelectedItemsProvider: React.FC<React.PropsWithChildren> = ({
     [selectedItems]
   );
 
+  const handleClearAll = () => {
+    setSelectedItems([]);
+  };
+
   const handleOnClick = React.useCallback(
     (action: Action, item: PictureInfo) => {
       if (action === "add") handleOnAddSelectedItem(item);
@@ -57,6 +63,7 @@ export const SelectedItemsProvider: React.FC<React.PropsWithChildren> = ({
     () => ({
       selectedItems,
       onClick: handleOnClick,
+      onClearAll: handleClearAll,
     }),
     [selectedItems, handleOnClick]
   );
