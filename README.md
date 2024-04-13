@@ -13,3 +13,5 @@ El proyecto se levanta mediante el comando `npm run dev`.
 3. Ocultar el carrito (opcional).
 4. Usar MUI (opcional).
 5. Añadir opción de vaciar todo el carrito (opcional).
+
+![Captura de pantalla del proyecto](<Captura de pantalla proyecto.png>)
