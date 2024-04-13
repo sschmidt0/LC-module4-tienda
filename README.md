@@ -1,30 +1,15 @@
 # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto se ha realizado con React, Typescript y Vite. Es la solución de uno de los ejercicios de Lemoncode, el enunciado 2 de React. Solo se ha considerado la versión desktop (muy mal) y no se ha testeado ningún documento (😱). La idea es añadir los tests después de haber realizado el módulo de testing.
 
-Currently, two official plugins are available:
+## Levantar el proyecto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+El proyecto se levanta mediante el comando `npm run dev`.
 
-## Expanding the ESLint configuration
+## Ejercicios que se ha resuelto
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+1. Crear dos páginas - doggies y kitties - con imágenes que se pueden seleccionar.
+2. Fuera del router, crear un componente cart que visualiza las imágenes seleccionadas.
+3. Ocultar el carrito (opcional).
+4. Usar MUI (opcional).
+5. Añadir opción de vaciar todo el carrito (opcional).
